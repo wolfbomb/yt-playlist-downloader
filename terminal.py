@@ -1,4 +1,6 @@
-import sys
+import sys, colorama
+
+colorama.init(autoreset=True)
 
 def get_argument_count():
     return len(sys.argv)
