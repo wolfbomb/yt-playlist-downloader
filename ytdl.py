@@ -1,4 +1,4 @@
-import terminal
+import terminal, scraper
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -14,5 +14,6 @@ def main():
             download_playlist(firstArg, secondArg)
 
 def download_playlist(url, path):
+
 
 main()
