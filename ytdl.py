@@ -8,4 +8,11 @@ def main():
         firstArg = terminal.get_argument(1)
         secondArg = terminal.get_argument(2)
 
+        if firstArg == "help":
+            terminal.print_help()
+        else:
+            download_playlist(firstArg, secondArg)
+
+def download_playlist(url, path):
+
 main()
