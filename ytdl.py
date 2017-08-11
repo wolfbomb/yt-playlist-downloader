@@ -14,6 +14,6 @@ def main():
             download_playlist(firstArg, secondArg)
 
 def download_playlist(url, path):
-
+    videos = scraper.find_videos_in_playlist(url)
 
 main()
