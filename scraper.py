@@ -21,5 +21,6 @@ def find_videos_in_playlist(url):
     for a_tag in a_tags:
         title = get_video_title(a_tag)
         url = a_tag["href"]
+        videos.append(Video(title, url))
 
-    return
+    return videos
