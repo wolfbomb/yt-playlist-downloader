@@ -14,6 +14,20 @@ def main():
             download_playlist(firstArg, secondArg)
 
 def download_playlist(url, path):
-    videos = scraper.find_videos_in_playlist(url)
+    videos_in_playlist = scraper.find_videos_in_playlist(url)
+
+    downloaded_files = get_downloaded_files(path)
+    new_videos = find_new_videos(videos_in_playlist, downloaded_files)
+
+def find_new_videos(videos_in_playlist, downloaded_files):
+    new_videos = []
+
+    return new_videos
+
+def get_downloaded_files(path):
+    files = []
+
+
+    return files
 
 main()
