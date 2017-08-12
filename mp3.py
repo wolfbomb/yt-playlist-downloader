@@ -5,16 +5,16 @@ class MP3:
         self.tags = EasyID3(path)
 
     def read_artist(self):
-        return read_tag("artist")
+        return self.read_tag("artist")
 
     def read_title(self):
-        return read_tag("title")
+        return self.read_tag("title")
 
     def read_url(self):
-        return read_tag("website")
+        return self.read_tag("website")
 
     def read_tag(self, tag):
-        return self.tags[tag]
+        return self.tags[tag][0]
 
     def write_tag(self, tag, value):
         self.tags[tag] = value

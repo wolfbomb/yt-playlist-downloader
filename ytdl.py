@@ -1,4 +1,5 @@
 import terminal, scraper, os
+from mp3 import MP3
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -25,7 +26,15 @@ def mkdir(path):
         os.makedirs(path)
 
 def find_new_videos(videos_in_playlist, downloaded_files):
-    new_videos = []
+    if len(downloaded_files) == 0:
+        return videos_in_playlist
+
+    new_videos = list(videos_in_playlist)
+
+    for video in videos_in_playlist:
+        for file in downloaded_files:
+            if video.url == MP3(file).read_url():
+                new_videos.remove(video)
 
     return new_videos
 
