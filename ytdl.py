@@ -1,5 +1,5 @@
-import terminal, scraper, os
-from mp3 import MP3
+import terminal, scraper
+from directory import Directory
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -17,34 +17,8 @@ def main():
 def download_playlist(url, path):
     videos_in_playlist = scraper.find_videos_in_playlist(url)
 
-    mkdir(path)
-    downloaded_files = get_downloaded_files(path)
-    new_videos = find_new_videos(videos_in_playlist, downloaded_files)
-
-def mkdir(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-def find_new_videos(videos_in_playlist, downloaded_files):
-    if len(downloaded_files) == 0:
-        return videos_in_playlist
-
-    new_videos = list(videos_in_playlist)
-
-    for video in videos_in_playlist:
-        for file in downloaded_files:
-            if video.url == MP3(file).read_url():
-                new_videos.remove(video)
-
-    return new_videos
-
-def get_downloaded_files(path):
-    files = []
-
-    for file in os.listdir(path):
-        if file.endswith(".mp3"):
-            files.append(os.path.join(path, file))
-
-    return files
+    directory = Directory(path)
+    downloaded_files = directory.get_downloaded_files()
+    new_videos = directory.find_new_videos(videos_in_playlist, downloaded_files)
 
 main()
