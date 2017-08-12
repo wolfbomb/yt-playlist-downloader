@@ -1,4 +1,4 @@
-import terminal, scraper
+import terminal, scraper, os
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -27,6 +27,9 @@ def find_new_videos(videos_in_playlist, downloaded_files):
 def get_downloaded_files(path):
     files = []
 
+    for file in os.listdir(path):
+        if file.endswith(".mp3"):
+            files.append(os.path.join(path, file))
 
     return files
 
