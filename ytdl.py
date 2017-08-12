@@ -16,8 +16,13 @@ def main():
 def download_playlist(url, path):
     videos_in_playlist = scraper.find_videos_in_playlist(url)
 
+    mkdir(path)
     downloaded_files = get_downloaded_files(path)
     new_videos = find_new_videos(videos_in_playlist, downloaded_files)
+
+def mkdir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
 
 def find_new_videos(videos_in_playlist, downloaded_files):
     new_videos = []
