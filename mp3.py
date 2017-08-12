@@ -16,8 +16,11 @@ class MP3:
     def read_tag(self, tag):
         return self.tags[tag][0]
 
-    def write_tag(self, tag, value):
-        self.tags[tag] = value
+
+    def write_tags(self, tags):
+        for tag in tags:
+            self.tags[tag] = tags[tag]
+
         self.save()
 
     def save(self):
