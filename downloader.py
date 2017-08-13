@@ -6,7 +6,7 @@ class Downloader:
         self.directory = Directory(path)
 
     def find_new_videos(self, url):
-        videos_in_playlist = scraper.find_videos_in_playlist(url)
+        videos_in_playlist = scraper.find_videos_in_playlist(url, self.directory.path)
 
         downloaded_files = self.directory.get_downloaded_files()
         new_videos = self.directory.find_new_videos(videos_in_playlist, downloaded_files)

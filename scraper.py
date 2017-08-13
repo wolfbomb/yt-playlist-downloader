@@ -14,7 +14,7 @@ def select_a_tags(parsed_HTML):
 def get_video_title(a_tag):
     return a_tag.find("h4").contents[0].replace("\n", "").strip()
 
-def find_videos_in_playlist(url):
+def find_videos_in_playlist(url, path):
     parsed_HTML = parse_HTML(scrape(url))
     a_tags = select_a_tags(parsed_HTML)
 
@@ -23,6 +23,6 @@ def find_videos_in_playlist(url):
     for a_tag in a_tags:
         title = get_video_title(a_tag)
         url = a_tag["href"]
-        videos.append(Video(title, url))
+        videos.append(Video(title, url, path))
 
     return videos
