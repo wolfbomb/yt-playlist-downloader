@@ -1,5 +1,6 @@
 import scraper, subprocess
 from directory import Directory
+from mp3 import MP3
 
 class Downloader:
     def __init__(self, path):
@@ -16,6 +17,8 @@ class Downloader:
     def download_videos(self, videos):
         for video in videos:
             self.download_video(video)
+            mp3 = MP3(video.path)
+            mp3.write_tags({"website": video.url})
 
     def download_video(self, video):
         subprocess.call(["youtube-dl", "-x", "--audio-format", "mp3", "-o",
