@@ -1,4 +1,4 @@
-import terminal
+import terminal, fails
 from downloader import Downloader
 
 def main():
@@ -15,5 +15,8 @@ def main():
             downloader = Downloader(secondArg)
             new_videos = downloader.find_new_videos(firstArg)
             downloader.download_videos(new_videos)
+
+            for fail in fails.fails:
+                print("failed: " + fail.path)
 
 main()
