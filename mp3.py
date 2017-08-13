@@ -1,4 +1,5 @@
 from mutagen.easyid3 import EasyID3
+from mutagen.easyid3 import EasyID3KeyError
 
 class MP3:
     def __init__(self, path):
@@ -14,7 +15,10 @@ class MP3:
         return self.read_tag("website")
 
     def read_tag(self, tag):
-        return self.tags[tag][0]
+        try:
+            return self.tags[tag][0]
+        except EasyID3KeyError:
+            return ""
 
 
     def write_tags(self, tags):
