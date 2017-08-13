@@ -1,4 +1,4 @@
-import scraper
+import scraper, subprocess
 from directory import Directory
 
 def find_new_videos(url, path):
@@ -9,3 +9,9 @@ def find_new_videos(url, path):
     new_videos = directory.find_new_videos(videos_in_playlist, downloaded_files)
 
     return new_videos
+
+def download_videos(videos):
+    for video in videos:
+        download_video(video)
+
+def download_video(video):

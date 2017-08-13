@@ -12,5 +12,6 @@ def main():
             terminal.print_help()
         else:
             new_videos = downloader.find_new_videos(firstArg, secondArg)
+            downloader.download_videos(new_videos)
 
 main()
