@@ -21,6 +21,6 @@ class Downloader:
             mp3.write_tags({"website": video.url})
 
     def download_video(self, video):
-        subprocess.call(["youtube-dl", "-x", "--audio-format", "mp3", "-o",
+        subprocess.call(["youtube-dl", "-x", "--prefer-ffmpeg", "--audio-format", "mp3", "-o",
             self.directory.path + ("" if self.directory.path.endswith("/") else "/")
                 + "%(title)s.%(ext)s\" \"", video.url]);
