@@ -1,5 +1,4 @@
-import terminal, scraper
-from directory import Directory
+import terminal, downloader
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -12,13 +11,6 @@ def main():
         if firstArg == "help":
             terminal.print_help()
         else:
-            download_playlist(firstArg, secondArg)
-
-def download_playlist(url, path):
-    videos_in_playlist = scraper.find_videos_in_playlist(url)
-
-    directory = Directory(path)
-    downloaded_files = directory.get_downloaded_files()
-    new_videos = directory.find_new_videos(videos_in_playlist, downloaded_files)
+            new_videos = downloader.find_new_videos(firstArg, secondArg)
 
 main()
