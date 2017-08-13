@@ -19,7 +19,7 @@ class MP3:
     def read_tag(self, tag):
         try:
             if tag in self.tags:
-                return self.tags[tag][0].encode("utf-8")
+                return self.tags[tag][0]
             else:
                 return ""
         except EasyID3KeyError:
@@ -28,7 +28,7 @@ class MP3:
 
     def write_tags(self, tags):
         for tag in tags:
-            self.tags[tag] = tags[tag].decode("utf-8")
+            self.tags[tag] = tags[tag]
 
         self.save()
 
@@ -50,10 +50,17 @@ class MP3:
         filename = os.path.splitext(filename_with_ext)[0]
         filename = self.remove_square_brackets(filename)
 
+        artist = ""
+        title = ""
+
         if "-" in filename:
             artist = filename[:filename.index("-")].strip()
             title = filename[filename.index("-")+1:].strip()
-            self.write_tags({"artist": artist, "title": title})
+        else:
+            artist = input("Enter artist name\n")
+            title = input("Enter title\n")
+
+        self.write_tags({"artist": artist, "title": title})
 
     def remove_square_brackets(self, str):
         return re.sub(r'\[.*?\]', '', str)

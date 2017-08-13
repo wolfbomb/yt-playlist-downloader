@@ -38,5 +38,3 @@ class Directory:
                 mp3 = MP3(self.path + ("" if self.path.endswith("/") else "/") + file)
                 if not mp3.has_all_tags():
                     mp3.set_tags()
-                else:
-                    print(file + " has all tags: artist=" + mp3.read_artist() + " title=" + mp3.read_title())
