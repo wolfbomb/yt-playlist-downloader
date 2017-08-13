@@ -29,3 +29,11 @@ class MP3:
 
     def save(self):
         self.tags.save()
+
+    def has_all_tags():
+        if not read_url():
+
+        if not read_artist() or not read_title():
+
+    def set_tags():
+        

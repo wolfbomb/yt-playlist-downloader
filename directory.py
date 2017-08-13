@@ -31,3 +31,10 @@ class Directory:
                 files.append(os.path.join(self.path, file))
 
         return files
+
+    def check_file_tags():
+        for file in os.listdir(self.path):
+            if file.endswith(".mp3"):
+                mp3 = MP3(file)
+                if not mp3.has_all_tags():
+                    mp3.set_tags()
