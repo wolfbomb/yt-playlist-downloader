@@ -1,17 +1,21 @@
 import scraper, subprocess
 from directory import Directory
 
-def find_new_videos(url, path):
-    videos_in_playlist = scraper.find_videos_in_playlist(url)
+class Downloader:
+    def __init__(self, path):
+        self.directory = Directory(path)
 
-    directory = Directory(path)
-    downloaded_files = directory.get_downloaded_files()
-    new_videos = directory.find_new_videos(videos_in_playlist, downloaded_files)
+    def find_new_videos(self, url):
+        videos_in_playlist = scraper.find_videos_in_playlist(url)
 
-    return new_videos
+        downloaded_files = self.directory.get_downloaded_files()
+        new_videos = self.directory.find_new_videos(videos_in_playlist, downloaded_files)
 
-def download_videos(videos):
-    for video in videos:
-        download_video(video)
+        return new_videos
 
-def download_video(video):
+    def download_videos(self, videos):
+        for video in videos:
+            self.download_video(video)
+
+    def download_video(self, video):
+        subprocess.call(["youtube-dl", "-x", "--audio-format", "mp3", "-o", self.directory.path + "/%(title)s.%(ext)s\" \"", video.url]);

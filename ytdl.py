@@ -1,4 +1,5 @@
-import terminal, downloader
+import terminal
+from downloader import Downloader
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -11,7 +12,8 @@ def main():
         if firstArg == "help":
             terminal.print_help()
         else:
-            new_videos = downloader.find_new_videos(firstArg, secondArg)
+            downloader = Downloader(secondArg)
+            new_videos = downloader.find_new_videos(firstArg)
             downloader.download_videos(new_videos)
 
 main()
