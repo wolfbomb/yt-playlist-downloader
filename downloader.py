@@ -18,4 +18,6 @@ class Downloader:
             self.download_video(video)
 
     def download_video(self, video):
-        subprocess.call(["youtube-dl", "-x", "--audio-format", "mp3", "-o", self.directory.path + "/%(title)s.%(ext)s\" \"", video.url]);
+        subprocess.call(["youtube-dl", "-x", "--audio-format", "mp3", "-o",
+            self.directory.path + ("" if self.directory.path.endswith("/") else "/")
+                + "%(title)s.%(ext)s\" \"", video.url]);
