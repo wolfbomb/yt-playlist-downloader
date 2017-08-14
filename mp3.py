@@ -1,4 +1,4 @@
-import fails, os, re
+import fails, os, re, terminal
 from mutagen.easyid3 import EasyID3
 from mutagen.easyid3 import EasyID3KeyError
 
@@ -53,9 +53,14 @@ class MP3:
         artist = ""
         title = ""
 
+        terminal.print_green("\n" + filename)
+
         if "-" in filename:
             artist = filename[:filename.index("-")].strip()
+            print("Artist: " + artist)
+
             title = filename[filename.index("-")+1:].strip()
+            print("Title: " + title)
         else:
             artist = input("Enter artist name\n")
             title = input("Enter title\n")
