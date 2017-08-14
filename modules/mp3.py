@@ -56,7 +56,7 @@ class MP3:
 
         terminal.print_green(filename)
 
-        if "-" in filename:
+        if "-" in filename and filename.count("-") == 1:
             artist = filename[:filename.index("-")].strip()
             print("Artist: " + artist)
 
