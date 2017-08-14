@@ -15,7 +15,7 @@ def main():
             downloader = Downloader(secondArg)
 
             new_videos = downloader.find_new_videos(firstArg)
-            terminal.print_green(str(len(new_videos)) + " new videos found")
+            terminal.print_green(str(len(new_videos)) + " new videos found in playlist")
 
             downloader.download_videos(new_videos)
 
