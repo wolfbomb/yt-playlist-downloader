@@ -1,3 +1,5 @@
+import re
+
 class Video:
     def __init__(self, title, url, path):
         self.title = self.remove_bad_chars(title)

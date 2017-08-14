@@ -1,4 +1,4 @@
-import os, re
+import os
 from modules import terminal, fails
 from mutagen.easyid3 import EasyID3
 from mutagen.easyid3 import EasyID3KeyError
