@@ -1,4 +1,5 @@
-import fails, os, re, terminal
+import os, re
+from modules import terminal, fails
 from mutagen.easyid3 import EasyID3
 from mutagen.easyid3 import EasyID3KeyError
 
@@ -82,8 +83,7 @@ class MP3:
         while(True):
             userInput = input()
 
-            if userInput.lower() == "quit" or userInput.lower() == "stop" or
-                userInput.lower() == "end" or userInput == "":
+            if userInput.lower() == "quit" or userInput.lower() == "stop" or userInput.lower() == "end" or userInput == "":
                 break
 
             if self.user_wants_to_edit("artist", userInput):

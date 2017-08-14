@@ -1,6 +1,6 @@
-import terminal, fails
-from downloader import Downloader
-from mp3 import MP3
+from modules import terminal, fails
+from modules.downloader import Downloader
+from modules.mp3 import MP3
 
 def main():
     if terminal.get_argument_count() < 3:

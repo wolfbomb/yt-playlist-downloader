@@ -1,6 +1,7 @@
-import scraper, subprocess, terminal
-from directory import Directory
-from mp3 import MP3
+import subprocess
+from modules import scraper, terminal
+from modules.directory import Directory
+from modules.mp3 import MP3
 
 class Downloader:
     def __init__(self, path):

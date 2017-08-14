@@ -1,4 +1,4 @@
-import terminal
+from modules import terminal
 
 fails = []
 

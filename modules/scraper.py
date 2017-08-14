@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from video import Video
+from modules.video import Video
 
 def scrape(url):
     return requests.get(url).text

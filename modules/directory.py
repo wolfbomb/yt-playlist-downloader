@@ -1,5 +1,6 @@
-import os, terminal
-from mp3 import MP3
+import os
+from modules import terminal
+from modules.mp3 import MP3
 
 class Directory:
     def __init__(self, path):
