@@ -53,7 +53,7 @@ class MP3:
         artist = ""
         title = ""
 
-        terminal.print_green("\n" + filename)
+        terminal.print_green(filename)
 
         if "-" in filename:
             artist = filename[:filename.index("-")].strip()
@@ -62,8 +62,11 @@ class MP3:
             title = filename[filename.index("-")+1:].strip()
             print("Title: " + title)
         else:
-            artist = input("Enter artist name\n")
-            title = input("Enter title\n")
+            print("Enter artist name:")
+            artist = input()
+
+            print("\nEnter title:")
+            title = input()
 
         self.write_tags({"artist": artist, "title": title})
 

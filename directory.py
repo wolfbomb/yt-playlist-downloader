@@ -1,4 +1,4 @@
-import os
+import os, terminal
 from mp3 import MP3
 
 class Directory:
@@ -33,8 +33,13 @@ class Directory:
         return files
 
     def check_file_tags(self):
+        mp3s_without_tags = []
         for file in os.listdir(self.path):
             if file.endswith(".mp3"):
                 mp3 = MP3(self.path + ("" if self.path.endswith("/") else "/") + file)
                 if not mp3.has_all_tags():
-                    mp3.set_tags()
+                    mp3s_without_tags.append(mp3)
+
+        for mp3 in mp3s_without_tags:
+            terminal.print_green("\n" + str(mp3s_without_tags.index(mp3)+1) + "/" + str(len(mp3s_without_tags)))
+            mp3.set_tags()
