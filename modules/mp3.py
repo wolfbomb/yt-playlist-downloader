@@ -49,7 +49,6 @@ class MP3:
     def set_tags(self):
         filename_with_ext = os.path.basename(self.path)
         filename = os.path.splitext(filename_with_ext)[0]
-        filename = self.remove_square_brackets(filename)
 
         artist = ""
         title = ""
@@ -70,9 +69,6 @@ class MP3:
             title = input()
 
         self.write_tags({"artist": artist, "title": title})
-
-    def remove_square_brackets(self, str):
-        return re.sub(r'\[.*?\]', '', str)
 
     def edit(self):
         terminal.print_green("\n" + self.path)

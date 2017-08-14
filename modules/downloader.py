@@ -21,6 +21,7 @@ class Downloader:
     def download_videos(self, videos):
         for video in videos:
             terminal.print_green("\n" + str(videos.index(video)+1) + "/" + self.count_new_videos)
+            terminal.print_green(video.title)
 
             self.download_video(video)
             try:
