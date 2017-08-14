@@ -23,12 +23,15 @@ class Downloader:
             terminal.print_green("\n" + str(videos.index(video)+1) + "/" + self.count_new_videos)
 
             self.download_video(video)
-            mp3 = MP3(video.path)
-            mp3.write_tags({"website": video.url})
+            try:
+                mp3 = MP3(video.path)
+                mp3.write_tags({"website": video.url})
+            except Exception:
+                terminal.print_red("File not existing")
 
         self.directory.check_file_tags()
 
     def download_video(self, video):
         subprocess.call(["youtube-dl", "-x", "--prefer-ffmpeg", "--audio-format", "mp3", "-o",
             self.directory.path + ("" if self.directory.path.endswith("/") else "/")
-                + "%(title)s.%(ext)s\" \"", video.url]);
+                + video.title + ".%(ext)s", video.url]);
