@@ -72,3 +72,26 @@ class MP3:
 
     def remove_square_brackets(self, str):
         return re.sub(r'\[.*?\]', '', str)
+
+    def edit(self):
+        terminal.print_green("\n" + self.path)
+        print("Artist: " + self.read_artist())
+        print("Title: " + self.read_title())
+        print("URL: " + self.read_url())
+
+        while(True):
+            userInput = input()
+
+            if userInput.lower() == "quit" or userInput.lower() == "stop" or
+                userInput.lower() == "end" or userInput == "":
+                break
+
+            if self.user_wants_to_edit("artist", userInput):
+                self.write_tags({"artist": userInput[7:].strip()})
+            elif self.user_wants_to_edit("title", userInput):
+                self.write_tags({"title": userInput[6:].strip()})
+            elif self.user_wants_to_edit("url", userInput):
+                self.write_tags({"url": userInput[4:].strip()})
+
+    def user_wants_to_edit(self, value, userInput):
+        return userInput.lower().startswith(value + "=") or userInput.lower().startswith(value + ":")

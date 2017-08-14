@@ -1,5 +1,6 @@
 import terminal, fails
 from downloader import Downloader
+from mp3 import MP3
 
 def main():
     if terminal.get_argument_count() < 3:
@@ -11,6 +12,8 @@ def main():
 
         if firstArg == "help":
             terminal.print_help()
+        elif firstArg == "edit":
+            MP3(secondArg).edit()
         else:
             downloader = Downloader(secondArg)
 
