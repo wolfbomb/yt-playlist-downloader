@@ -20,6 +20,6 @@ def main():
             downloader.download_videos(new_videos)
 
             for fail in fails.fails:
-                print("failed: " + fail.path)
+                terminal.print_red("failed: " + fail.path)
 
 main()
