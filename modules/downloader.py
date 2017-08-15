@@ -35,4 +35,4 @@ class Downloader:
     def download_video(self, video):
         subprocess.call(["youtube-dl", "-x", "--prefer-ffmpeg", "--audio-format", "mp3", "-o",
             self.directory.path + ("" if self.directory.path.endswith("/") else "/")
-                + video.title + ".%(ext)s", video.url]);
+                + video.title + ".%(ext)s", video.url])
