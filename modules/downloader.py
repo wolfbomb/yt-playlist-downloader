@@ -13,6 +13,8 @@ class Downloader:
         downloaded_files = self.directory.get_downloaded_files()
         terminal.print_green(str(len(downloaded_files)) + " files found in directory")
 
+        terminal.print_green(str(len(videos_in_playlist)) + " videos found in playlist")
+
         new_videos = self.directory.find_new_videos(videos_in_playlist, downloaded_files)
         self.count_new_videos = str(len(new_videos))
 
