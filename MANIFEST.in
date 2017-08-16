@@ -1,2 +1,2 @@
-include ytdl
+include ytdl.py
 recursive-include modules/

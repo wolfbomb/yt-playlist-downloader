@@ -6,5 +6,5 @@ setup(
 	description = "A command-line program for downloading YT-playlists.",
 	author = "Nicolas Raube",
 	packages = ["modules"],
-	scripts = ["ytdl"]
+	scripts = ["ytdl.py"]
 )
