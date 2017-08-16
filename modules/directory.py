@@ -37,7 +37,7 @@ class Directory:
         mp3s_without_tags = []
         for file in os.listdir(self.path):
             if file.endswith(".mp3"):
-                mp3 = MP3(self.path + ("" if self.path.endswith("/") else "/") + file)
+                mp3 = MP3(os.path.join(self.path, file))
                 if not mp3.has_all_tags():
                     mp3s_without_tags.append(mp3)
 

@@ -1,4 +1,4 @@
-import subprocess
+import subprocess, os
 from modules import scraper, terminal
 from modules.directory import Directory
 from modules.mp3 import MP3
@@ -36,5 +36,4 @@ class Downloader:
 
     def download_video(self, video):
         subprocess.call(["youtube-dl", "-x", "--prefer-ffmpeg", "--audio-format", "mp3", "-o",
-            self.directory.path + ("" if self.directory.path.endswith("/") else "/")
-                + video.title + ".%(ext)s", video.url])
+            os.path.join(self.directory.path, video.title + ".%(ext)s"), video.url])
