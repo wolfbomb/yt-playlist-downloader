@@ -20,11 +20,13 @@ Square brackets ('[ ]') and everything inside them will be removed from the titl
 
 ## Installation
 Clone the repository to your computer by running:
+
 ```git clone https://github.com/nicolasraube/yt-playlist-downloader.git```
 
 Install [Python](https://www.python.org/downloads/)
 
 Now install the following Python modules with pip (should come with Python):
+
 ```pip install colorama requests mutagen beautifulsoup4```
 
 You are now ready to use yt-playlist-downloader.
