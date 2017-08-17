@@ -19,14 +19,20 @@ If the YT-title contains exactly one dash ('-'), the left part of it will be use
 Square brackets ('[ ]') and everything inside them will be removed from the title, as well as these characters: ' \ / " . _
 
 ## Installation
-Clone the repository to your computer by running:
+##### Download
+Either download the files as a zip and unpack them or clone the repository by running:
 
 ```git clone https://github.com/nicolasraube/yt-playlist-downloader.git```
 
-Install [Python](https://www.python.org/downloads/)
+##### Install [Python](https://www.python.org/downloads/)
 
-Now install the following Python modules with pip (should come with Python):
+##### Install Python modules
+Run this command that installs required Python modules with pip (pip should come with Python):
 
-```pip install colorama requests mutagen beautifulsoup4 youtube_dl```
+```pip install colorama requests lxml mutagen beautifulsoup4 youtube_dl```
+
+##### Install FFmpeg
+[Download FFmpeg here](https://ffmpeg.org/download.html)
+[How to install FFmpeg](https://www.google.com/search?q=how+to+install+ffmpeg)
 
 You are now ready to use yt-playlist-downloader.
