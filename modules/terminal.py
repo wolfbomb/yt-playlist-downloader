@@ -20,7 +20,7 @@ def print_help():
     print("")
 
     print_green("ytdl.py <url> <dir>")
-    print("<url> - url to the playlist that you want to download")
+    print("<url> - url to a video in the playlist that you want to download")
     print("<dir> - the directory where the videos should be downloaded to")
 
     print("")
@@ -29,5 +29,6 @@ def print_help():
     print("ytdl will output the id3 tags of the mp3 file")
     print("you can edit those tags by first using this edit command and then typing the tag that you want to change with an equality sign and the value")
     print("e.g.:")
-    print("url=https://www.youtube.com/...")
+    print("url=https://www.youtube.com/watch?v=oHg5SJYRHA0")
+    print("artist=Adele")
     print("type \"exit\" to exit editing mode")

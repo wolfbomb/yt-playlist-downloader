@@ -79,7 +79,7 @@ class MP3:
         while(True):
             userInput = input()
 
-            if userInput.lower() == "quit" or userInput.lower() == "stop" or userInput.lower() == "end" or userInput == "":
+            if userInput.lower() == "exit" or userInput.lower() == "quit" or userInput.lower() == "stop" or userInput.lower() == "end" or userInput == "":
                 break
 
             if self.user_wants_to_edit("artist", userInput):
