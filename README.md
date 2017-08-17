@@ -27,6 +27,6 @@ Install [Python](https://www.python.org/downloads/)
 
 Now install the following Python modules with pip (should come with Python):
 
-```pip install colorama requests mutagen beautifulsoup4```
+```pip install colorama requests mutagen beautifulsoup4 youtube_dl```
 
 You are now ready to use yt-playlist-downloader.
