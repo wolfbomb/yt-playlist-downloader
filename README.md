@@ -33,6 +33,7 @@ Run this command that installs required Python modules with pip (pip should come
 
 ##### Install FFmpeg
 [Download FFmpeg here](https://ffmpeg.org/download.html)
+
 [How to install FFmpeg](https://www.google.com/search?q=how+to+install+ffmpeg)
 
 You are now ready to use yt-playlist-downloader.
