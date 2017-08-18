@@ -47,9 +47,13 @@ To download videos in a playlist, run this command:
 Please include the quotation marks.
 ##### [url]
 URL to a video in the playlist (**not** to the playlist itself)
+
 This means that the url should include /watch?v= and &list= like this:
+
 https://www.youtube.com/watch?v=XCV34VJX&index=1&list=lskfjgPOIJSd63ksfgd345f43hjkl
+
 and not /playlist?list= like this:
+
 https://www.youtube.com/playlist?list=lskfjgPOIJSd63ksfgd345f43hjkl
 
 Also keep in mind that it will download only the first 200 videos in a playlist. If you have more than 200 videos, please create multiple playlists. Downloading only new videos will still work.
