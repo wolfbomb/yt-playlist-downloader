@@ -1,5 +1,5 @@
 # YouTube Playlist Downloader
-yt-playlist-downloader is a command-line tool that downloads every video in a YouTube playlist as an MP3-file and automatically adds id3 tags to them. Those tags allow MP3 players to display information about a song such as the author or title.
+YT-playlist-downloader is a command-line tool that downloads every video in a YouTube playlist as an MP3-file and automatically adds id3 tags to them. Those tags allow MP3 players to display information about a song such as the author or title.
 It also detects new videos in the playlist and downloads only those.
 
 This project uses [youtube-dl](https://github.com/rg3/youtube-dl) by [Ricardo Garcia](https://github.com/rg3) to download YouTube videos.
@@ -72,9 +72,11 @@ Local path to the MP3 file that you want to edit.
 
 The program will now output the tags artist, title and URL with their current values.
 To exit editing mode, enter
+
 ```exit```
 
 To edit tags, enter a command like this:
+
 ```[tag]=[value]```
 
 ##### [tag]
@@ -85,6 +87,7 @@ Value for the tag, e.g. Adele
 
 #### Examples
 ```python ytdl.py edit "D:\Music\Adele - Rolling In The Deep.mp3"```
+
 Output:
 ```
 Artist=Adel
