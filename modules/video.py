@@ -11,7 +11,7 @@ class Video:
         return head
 
     def remove_bad_chars(self, str):
-        str = str.replace("'", "").replace("\"", "").replace("/", "").replace("\\", "").replace(".", "").replace("_", "")
+        str = str.replace("'", "").replace("\"", "").replace("/", "").replace("\\", "").replace(".", "").replace("_", "").replace(":", "")
         str = self.remove_square_brackets(str)
         return str
 
