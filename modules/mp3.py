@@ -87,7 +87,7 @@ class MP3:
             elif self.user_wants_to_edit("title", userInput):
                 self.write_tags({"title": userInput[6:].strip()})
             elif self.user_wants_to_edit("url", userInput):
-                self.write_tags({"url": userInput[4:].strip()})
+                self.write_tags({"website": userInput[4:].strip()})
 
     def user_wants_to_edit(self, value, userInput):
         return userInput.lower().startswith(value + "=") or userInput.lower().startswith(value + ":")
