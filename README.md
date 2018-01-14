@@ -39,7 +39,7 @@ The YouTube-URL of the video which is used for comparing local MP3-files to the 
 For auto tag-setting to work flawlessly, the YT-title of the video must follow the following pattern:
 <br><b>Artist - Title (additional information)</b><br>
 If the YT-title contains exactly one dash ('-'), the left part of it will be used as the artist tag and the right part will be used as the title tag. Otherwise, the user will be prompted to enter the artist and song title after the whole download process finished.
-Square brackets ('[ ]') and everything inside them will be removed from the title, as well as these characters: ' \ / " . _ ;
+Square brackets ('[ ]') and everything inside them will be removed from the title, as well as these characters: ' \ / " . _ :
 
 ## Usage
 #### Downloading
