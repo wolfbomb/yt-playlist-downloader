@@ -26,21 +26,6 @@ Run this command that installs required Python modules with pip (pip should come
 
 You are now ready to use yt-playlist-downloader.
 
-## Automatic tag setting
-yt-playlist-downloader automatically sets the following MP3 tags (ID3):
-#### Artist
-Usually the first part of the YT-title
-#### Title (of the song)
-Usually the second part of the YT-title
-#### Website
-The YouTube-URL of the video which is used for comparing local MP3-files to the videos in a playlist.
-
-
-For auto tag-setting to work flawlessly, the YT-title of the video must follow the following pattern:
-<br><b>Artist - Title (additional information)</b><br>
-If the YT-title contains exactly one dash ('-'), the left part of it will be used as the artist tag and the right part will be used as the title tag. Otherwise, the user will be prompted to enter the artist and song title after the whole download process finished.
-Square brackets ('[ ]') and everything inside them will be removed from the title, as well as these characters: ' \ / " . _ :
-
 ## Usage
 #### Downloading
 To download videos in a playlist, run this command:
@@ -67,7 +52,21 @@ Local path to a directory where you want to download all videos to / where you a
 
 ```python ytdl.py "https://www.youtube.com/watch?v=XCV34VJX&index=1&list=lskfjgPOIJSd63ksfgd345f43hjkl" "D:\Music\"```
 
-#### Edit tags of MP3s
+## Automatic tag setting
+yt-playlist-downloader automatically sets the following MP3 tags (ID3):
+#### Artist
+Usually the first part of the YT-title
+#### Title (of the song)
+Usually the second part of the YT-title
+#### Website
+The YouTube-URL of the video which is used for comparing local MP3-files to the videos in a playlist.
+
+For auto tag-setting to work flawlessly, the YT-title of the video must follow the following pattern:
+<br><b>Artist - Title (additional information)</b><br>
+If the YT-title contains exactly one dash ('-'), the left part of it will be used as the artist tag and the right part will be used as the title tag. Otherwise, the user will be prompted to enter the artist and song title after the whole download process finished.
+Square brackets ('[ ]') and everything inside them will be removed from the title, as well as these characters: ' \ / " . _ :
+
+## Edit tags of MP3s
 The command to edit the tags is:
 ```python ytdl.py edit "[MP3]"```
 Please include the quotation marks.
